@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" modified="2026-04-29T00:00:00.000Z" agent="ArchLens" version="24.0.0" type="device">
+  <diagram name="GCP-Serverless-Data-Pipeline" id="gcp-sample">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="iot" value="IoT Devices / Mobile Clients" style="shape=mxgraph.gcp2.compute_engine;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cdn" value="Cloud CDN" style="shape=mxgraph.gcp2.cloud_cdn;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="lb" value="Cloud Load Balancing" style="shape=mxgraph.gcp2.cloud_load_balancing;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="armor" value="Cloud Armor (WAF/DDoS)" style="shape=mxgraph.gcp2.cloud_armor;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="apigw" value="API Gateway" style="shape=mxgraph.gcp2.api_gateway;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cloudrun" value="Cloud Run (Ingest API)" style="shape=mxgraph.gcp2.cloud_run;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pubsub" value="Pub/Sub (Event Bus)" style="shape=mxgraph.gcp2.cloud_pubsub;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dataflow" value="Dataflow (Stream Processing)" style="shape=mxgraph.gcp2.cloud_dataflow;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="functions" value="Cloud Functions (Transform)" style="shape=mxgraph.gcp2.cloud_functions;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="760" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bq" value="BigQuery (Data Warehouse)" style="shape=mxgraph.gcp2.bigquery;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="400" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bt" value="Bigtable (Time Series)" style="shape=mxgraph.gcp2.cloud_bigtable;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gcs" value="Cloud Storage (Raw + Archive)" style="shape=mxgraph.gcp2.cloud_storage;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="firestore" value="Firestore (Metadata)" style="shape=mxgraph.gcp2.firestore;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="760" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="looker" value="Looker (BI Dashboards)" style="shape=mxgraph.gcp2.bigquery;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="iam" value="Cloud IAM" style="shape=mxgraph.gcp2.identity_and_access_management;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="kms" value="Cloud KMS" style="shape=mxgraph.gcp2.cloud_kms;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="logging" value="Cloud Logging + Monitoring" style="shape=mxgraph.gcp2.stackdriver;fillColor=#4285F4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" edge="1" source="iot" target="cdn" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" source="cdn" target="lb" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" source="lb" target="armor" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" source="armor" target="apigw" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" source="apigw" target="cloudrun" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" source="cloudrun" target="pubsub" parent="1" value="publish events"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" source="pubsub" target="dataflow" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" source="pubsub" target="functions" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" source="dataflow" target="bq" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" source="dataflow" target="bt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" source="functions" target="gcs" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" source="functions" target="firestore" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" source="bq" target="looker" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" source="cloudrun" target="iam" parent="1" value="auth"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" source="gcs" target="kms" parent="1" value="encrypt"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" source="cloudrun" target="logging" parent="1" value="logs"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

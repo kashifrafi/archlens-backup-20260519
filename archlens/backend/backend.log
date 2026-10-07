@@ -1,0 +1,22 @@
+nohup: ignoring input
+INFO:     Started server process [149523]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54442 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49250 - "POST /api/terraform/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40898 - "POST /api/terraform/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33558 - "POST /api/terraform/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48212 - "POST /api/terraform/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35426 - "POST /api/terraform/run HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48232 - "POST /api/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47534 - "POST /api/waf-review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47524 - "POST /api/waf-review HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58040 - "POST /api/pricing HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58032 - "POST /api/pricing HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46890 - "POST /api/terraform/stream HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52194 - "POST /api/terraform/run HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [149523]

@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net" modified="2026-04-29T00:00:00.000Z" agent="ArchLens" version="24.0.0" type="device">
+  <diagram name="AWS-3-Tier-Web-App" id="aws-sample">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="user" value="End Users" style="shape=mxgraph.aws4.users;fillColor=#232F3E;strokeColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="route53" value="Route 53 (DNS)" style="shape=mxgraph.aws4.route_53;fillColor=#8C4FFF;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cloudfront" value="CloudFront CDN" style="shape=mxgraph.aws4.cloudfront;fillColor=#8C4FFF;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="waf" value="AWS WAF" style="shape=mxgraph.aws4.waf;fillColor=#DD344C;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="alb" value="Application Load Balancer" style="shape=mxgraph.aws4.application_load_balancer;fillColor=#8C4FFF;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ec2_a" value="EC2 Web Tier (AZ-A)" style="shape=mxgraph.aws4.ec2;fillColor=#ED7100;" vertex="1" parent="1">
+          <mxGeometry x="480" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ec2_b" value="EC2 Web Tier (AZ-B)" style="shape=mxgraph.aws4.ec2;fillColor=#ED7100;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="asg" value="Auto Scaling Group" style="shape=mxgraph.aws4.auto_scaling;fillColor=#ED7100;" vertex="1" parent="1">
+          <mxGeometry x="540" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rds_primary" value="RDS MySQL (Primary)" style="shape=mxgraph.aws4.rds;fillColor=#3E7EBF;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="rds_replica" value="RDS MySQL (Replica)" style="shape=mxgraph.aws4.rds;fillColor=#3E7EBF;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="elasticache" value="ElastiCache Redis" style="shape=mxgraph.aws4.elasticache;fillColor=#3E7EBF;" vertex="1" parent="1">
+          <mxGeometry x="720" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3" value="S3 (Static Assets)" style="shape=mxgraph.aws4.s3;fillColor=#7AA116;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cloudwatch" value="CloudWatch (Monitoring)" style="shape=mxgraph.aws4.cloudwatch;fillColor=#E7157B;" vertex="1" parent="1">
+          <mxGeometry x="840" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="iam" value="IAM (Identity)" style="shape=mxgraph.aws4.identity_and_access_management_iam;fillColor=#DD344C;" vertex="1" parent="1">
+          <mxGeometry x="840" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="secrets" value="Secrets Manager" style="shape=mxgraph.aws4.secrets_manager;fillColor=#DD344C;" vertex="1" parent="1">
+          <mxGeometry x="840" y="340" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" edge="1" source="user" target="route53" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" source="route53" target="cloudfront" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" source="cloudfront" target="waf" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" source="waf" target="alb" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" source="alb" target="ec2_a" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" source="alb" target="ec2_b" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" source="asg" target="ec2_a" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" source="asg" target="ec2_b" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" source="ec2_a" target="rds_primary" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" source="ec2_b" target="rds_primary" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" source="rds_primary" target="rds_replica" parent="1" value="replication"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" source="ec2_a" target="elasticache" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" source="cloudfront" target="s3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

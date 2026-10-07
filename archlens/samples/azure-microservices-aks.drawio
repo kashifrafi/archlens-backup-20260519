@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net" modified="2026-04-29T00:00:00.000Z" agent="ArchLens" version="24.0.0" type="device">
+  <diagram name="Azure-Microservices-AKS" id="azure-sample">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="users" value="Customers" style="shape=mxgraph.azure2.users;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="frontdoor" value="Azure Front Door" style="shape=mxgraph.azure2.front_door;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="160" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="appgw" value="Application Gateway (WAF)" style="shape=mxgraph.azure2.application_gateways;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="apim" value="API Management" style="shape=mxgraph.azure2.api_management_services;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aks" value="Azure Kubernetes Service (AKS)" style="shape=mxgraph.azure2.kubernetes_services;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="acr" value="Azure Container Registry" style="shape=mxgraph.azure2.container_registries;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc1" value="Order Service (Pod)" style="shape=mxgraph.azure2.kubernetes_services;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="400" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc2" value="Payment Service (Pod)" style="shape=mxgraph.azure2.kubernetes_services;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="svc3" value="Inventory Service (Pod)" style="shape=mxgraph.azure2.kubernetes_services;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="sqldb" value="Azure SQL Database" style="shape=mxgraph.azure2.sql_database;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="400" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cosmos" value="Cosmos DB" style="shape=mxgraph.azure2.azure_cosmos_db;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="redis" value="Azure Cache for Redis" style="shape=mxgraph.azure2.cache_redis;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="640" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="servicebus" value="Service Bus (Queue)" style="shape=mxgraph.azure2.service_bus;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="760" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="blob" value="Blob Storage" style="shape=mxgraph.azure2.storage_accounts;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="760" y="460" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="kv" value="Key Vault" style="shape=mxgraph.azure2.key_vaults;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="80" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aad" value="Microsoft Entra ID (Azure AD)" style="shape=mxgraph.azure2.azure_active_directory;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="200" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="monitor" value="Azure Monitor + App Insights" style="shape=mxgraph.azure2.monitor;fillColor=#0078D4;" vertex="1" parent="1">
+          <mxGeometry x="880" y="320" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" edge="1" source="users" target="frontdoor" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" source="frontdoor" target="appgw" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" source="appgw" target="apim" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" source="apim" target="aks" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" source="acr" target="aks" parent="1" value="pull image"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" source="aks" target="svc1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" source="aks" target="svc2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" source="aks" target="svc3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" source="svc1" target="sqldb" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" source="svc2" target="cosmos" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" source="svc3" target="redis" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" source="svc1" target="servicebus" parent="1" value="publish"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" source="servicebus" target="svc2" parent="1" value="subscribe"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" source="svc3" target="blob" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" source="aks" target="kv" parent="1" value="secrets"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" source="aks" target="aad" parent="1" value="auth"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" source="aks" target="monitor" parent="1" value="logs"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,107 @@
+<mxfile host="app.diagrams.net" modified="2026-04-29T00:00:00.000Z" agent="ArchLens" version="24.0.0" type="device">
+  <diagram name="Multi-Cloud-Hybrid" id="multi-cloud-sample">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="users" value="Global Users" style="shape=ellipse;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="100" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="dns" value="Global DNS / Traffic Manager" style="shape=rectangle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cdn" value="Multi-Region CDN" style="shape=rectangle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="420" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api_gw" value="API Gateway / Reverse Proxy" style="shape=rectangle;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="web" value="Web Frontend (React SPA)" style="shape=rectangle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="auth" value="OAuth2 / OpenID Identity Provider" style="shape=rectangle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="260" y="220" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api1" value="User Service (REST API)" style="shape=rectangle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="520" y="220" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api2" value="Catalog Service (REST API)" style="shape=rectangle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="220" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="api3" value="Order Service (gRPC)" style="shape=rectangle;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="520" y="320" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="kafka" value="Kafka / Event Streaming Platform" style="shape=rectangle;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="720" y="320" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cache" value="In-Memory Cache (Redis Cluster)" style="shape=rectangle;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="primary_db" value="Primary OLTP Database (PostgreSQL)" style="shape=rectangle;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="420" width="240" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="warehouse" value="Analytics Data Warehouse" style="shape=rectangle;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="580" y="420" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="object" value="Object Storage (Files / Backups)" style="shape=rectangle;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="820" y="420" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="search" value="Elasticsearch (Full-text Search)" style="shape=rectangle;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="220" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="monitor" value="Observability (Metrics + Logs + Traces)" style="shape=rectangle;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="280" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="secrets" value="Secrets Vault" style="shape=rectangle;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="360" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cicd" value="CI/CD Pipeline" style="shape=rectangle;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+          <mxGeometry x="560" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="iac" value="Terraform IaC State" style="shape=rectangle;fillColor=#fad7ac;strokeColor=#b46504;" vertex="1" parent="1">
+          <mxGeometry x="760" y="540" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e1" edge="1" source="users" target="dns" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" edge="1" source="dns" target="cdn" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" edge="1" source="cdn" target="api_gw" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" edge="1" source="api_gw" target="web" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" edge="1" source="web" target="auth" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" edge="1" source="api_gw" target="api1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" edge="1" source="api_gw" target="api2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" edge="1" source="api1" target="api3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" edge="1" source="api3" target="kafka" parent="1" value="publish"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" edge="1" source="kafka" target="warehouse" parent="1" value="ETL"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" edge="1" source="api1" target="primary_db" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" edge="1" source="api2" target="primary_db" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" edge="1" source="api1" target="cache" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e14" edge="1" source="api2" target="search" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" edge="1" source="api3" target="object" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" edge="1" source="api1" target="monitor" parent="1" value="logs"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" edge="1" source="api1" target="secrets" parent="1" value="creds"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" edge="1" source="cicd" target="iac" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

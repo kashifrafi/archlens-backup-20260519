@@ -1,0 +1,5 @@
+backend/.env
+backend/gcp-service-account.json
+key*.json
+*.pem
+*.key
